@@ -13,9 +13,9 @@ int main(int argc, char* argv[]) {
 
     // Create an application window with the following settings:
     window = SDL_CreateWindow(
-        "An SDL3 window",                  // window title
-        640,                               // width, in pixels
-        480,                               // height, in pixels
+        "Car Catalogue 1",                  // window title
+        1080,                               // width, in pixels
+        620,                               // height, in pixels
         SDL_WINDOW_OPENGL                  // flags - see below
     );
 
