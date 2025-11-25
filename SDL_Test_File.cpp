@@ -191,8 +191,8 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 
     // Thruster flame flicker animation
     float flame_len = 25.0f + SDL_sinf(now * 0.02f) * 6.0f;
-    float fx = tx - SDL_cosf(angle) * flame_len;
-    float fy = ty - SDL_sinf(angle) * flame_len;
+    float fx = tx - SDL_cosf(angle + SDL_PI_F) * flame_len;
+    float fy = ty - SDL_sinf(angle + SDL_PI_F) * flame_len;
 
     // Flame triangle
     SDL_Vertex flame[3] = {
@@ -222,7 +222,7 @@ SDL_AppResult SDL_AppIterate(void* appstate)
     SDL_FRect ambient = { cx - 120, cy - 120, 240, 240 };
     SDL_RenderTexture(renderer, glowTex, NULL, &ambient);
 
-    SDL_SetTextureAlphaMod(glowTex, 40);  // 0 = invisible, 255 = full bright
+    SDL_SetTextureAlphaMod(glowTex, 0);  // 0 = invisible, 255 = full bright
 
     SDL_RenderPresent(renderer);
     return SDL_APP_CONTINUE;
